@@ -1,0 +1,49 @@
+  <!-- Modal -->
+  
+  <div class="modal fade" id="editItem" tabindex="-1" aria-labelledby="editItemLabel" aria-hidden="true" >
+	<div class="modal-dialog">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h1 class="modal-title fs-5" id="editItemLabel">Edit Item for <%= item.name %></h1>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+        <div class="modal-body">
+                           
+            
+            <div class="container">
+                <form action="/items/<%= item._id %>?_method=PUT" method="post">
+                    <div class="form-group mb-3">
+                        <label for="id">Item ID</label>
+                        <input type="text" name="name" id="name" disabled class="form-control" value="<%= item._id %>"> 
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="name" class="required">Name</label>
+                        <input type="text" name="name" id="name" required class="form-control" value="<%= item.name %>"> 
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="category">Category</label>
+                        <input type="text" name="category" id="category" disabled class="form-control" value="<%= item.category %>"> 
+                    </div>
+                    <div class="form-group mb-3"> 
+                        <label for="quantity" class="required">Quantity</label>
+                        <input type="number" name="quantity" id="quantity" required class="form-control" value="<%= item.quantity %>">
+                    </div>
+                    <div class="form-group mb-3"> 
+                        <label for="price">Price</label>
+                        <input type="number" name="price" id="price" disabled class="form-control" value="<%= item.price %>">
+                    </div> 
+                    <div class="form-group mb-3"> 
+                        <label for="description">Description</label>
+                        <input type="text" name="description" id="description" disabled class="form-control" value="<%= item.description %>"> 
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-outline-info">Update Item</button>
+                    </div>
+                </form>
+                
+	    </div>
+      </div>
+    </div>
+  </div>
+  </div>

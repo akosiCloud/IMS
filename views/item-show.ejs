@@ -1,0 +1,51 @@
+<%- include ('partials/header') %> 
+    <title>4SM | View Item</title>
+
+<body>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between align-items-start mb-4">
+			<div class="col-mb-8">
+            <h2>Item Information</h2>
+            </div>
+            
+            <div class="col-mb-4">
+
+            <button type="button" class="btn btn-primary btn-warning" data-bs-toggle="modal" data-bs-target="#editItem">
+                Update Item 
+            </button>
+            <%- include('modals/itemEdit') %>  
+            
+            <button type="button" class="btn btn-primary btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                Delete Item 
+            </button>            
+            <%- include('modals/itemDelete') %>  
+            </div>
+
+        </div>
+            <div class="form-group mb-3">
+                <label for="id">Item ID</label>
+                <input type="text" name="name" id="name" disabled class="form-control" value="<%= item._id %>"> 
+            </div>
+            <div class="form-group mb-3">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" disabled class="form-control" value="<%= item.name %>"> 
+            </div>
+            <div class="form-group mb-3">
+                <label for="category">Category</label>
+                <input type="text" name="category" id="category" disabled class="form-control" value="<%= item.category %>"> 
+            </div>
+            <div class="form-group mb-3"> 
+                <label for="quantity">Quantity</label>
+                <input type="number" name="quantity" id="quantity" disabled class="form-control" value="<%= item.quantity %>">
+            </div>
+            <div class="form-group mb-3"> 
+                <label for="price">Price</label>
+                <input type="number" name="price" id="price" disabled class="form-control" value="<%= item.price %>">
+            </div> 
+            <div class="form-group mb-3"> 
+                <label for="description">Description</label>
+                <input type="text" name="description" id="description" disabled class="form-control" value="<%= item.description %>"> 
+            </div>
+    </div>
+
+    <%- include ('partials/footer') %> 

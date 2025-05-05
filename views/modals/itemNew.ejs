@@ -1,0 +1,53 @@
+  <!-- Modal -->
+   
+  <div class="modal fade" id="newItemModal" tabindex="-1" aria-labelledby="newItemModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h1 class="modal-title fs-5" id="newItemModalLabel">Add New Item</h1>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+
+            <form action="/items/create-item" method="post">
+                <div class="form-group mb-3">
+                  <label for="name" class="required">Name</label>
+                  <input type="text" name="name" id="name" required class="form-control"> 
+                </div>
+                <div class="form-group mb-3">
+                    <label for="category" class="required">Category</label>
+                    <select name="category" id="category" required class="form-control" required>
+                        <option selected disabled value=" ">Select Category</option>
+                        <option value='Snacks'>Snacks</option> 
+                        <option value='Drinks'>Drinks</option> 
+                        <option value='Cleaning Agents'>Cleaning Agents</option> 
+                        <option value='Frozen Goods'>Frozen Goods</option> 
+                        <option value='Liquior'>Liquior</option> 
+                        <option value='Rice'>Rice</option> 
+                        <option value='Cooking'>Cooking</option> 
+                        <option value='Candy'>Candy</option> 
+                        <option value='Cigarrettes'>Cigarrettes</option> 
+                    </select>
+                </div>
+                <div class="form-group mb-3"> 
+                    <label for="quantity" class="required">Quantity</label>
+                    <input type="number" name="quantity" id="quantity" required class="form-control">
+                </div>
+                <div class="form-group mb-3"> 
+                    <label for="price" class="required">Price</label>
+                    <input type="number" name="price" id="price" required class="form-control">
+                </div> 
+                <div class="form-group mb-3"> 
+                    <label for="description" class="required">Description</label>
+                    <input type="text" name="description" id="description" required class="form-control"> 
+                </div>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		  <button type="submit" class="btn btn-primary">Add New Item</button>
+      
+        </form>
+		</div>
+	  </div>
+	</div>
+  </div>
