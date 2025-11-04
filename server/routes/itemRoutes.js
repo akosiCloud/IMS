@@ -2,6 +2,7 @@ var express = require ('express');
 var router = express.Router();
 var itemController = require('../controllers/itemControllers');
 
+router.get('/favicon.ico', (req, res) => res.status(204).end());
 router.get('/items',itemController.items);
 router.post('/create-item',itemController.addItem);
 router.get('/:id',itemController.viewItem);
@@ -10,5 +11,6 @@ router.delete('/:id',itemController.deleteItem);
 // router.get('/',itemController.searchItem);
 
 module.exports = router;
+
 
 
