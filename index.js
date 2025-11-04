@@ -3,8 +3,6 @@ var methodOverride = require('method-override');
 var path = require('path')
 var itemRoutes = require('./server/routes/itemRoutes');
 var itemIndex = require('./models/items');
-
-
 var app = express();
 
 app.set('view engine', 'ejs');
@@ -14,6 +12,8 @@ app.use(methodOverride('_method'))
 
 app.use('/items', itemRoutes)
 
-app.listen(3200,()=>
-    console.log("Serving on Port 3200")
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT,()=>
+    console.log(`Currently listening to ${PORT}`)
 )
