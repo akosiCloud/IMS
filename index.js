@@ -10,10 +10,11 @@ app.set('views', path.join(__dirname,'/views'));
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
 
-app.use('/items', itemRoutes)
+app.use('/', itemRoutes)
 
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT,()=>
     console.log(`Currently listening to ${PORT}`)
 )
+
