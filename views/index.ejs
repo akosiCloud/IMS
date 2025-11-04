@@ -39,7 +39,7 @@
 						<% var formattedDate = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()+1}`; %>
 						<td> <%= formattedDate %></td>
 						<td>
-							<a href="/items/<%=item._id%>" class="btn btn-sm btn-info text-light">View</a>
+							<a href="/<%=item._id%>" class="btn btn-sm btn-info text-light">View</a>
 
 							<button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#<%= item._id %>update" >Update</button>							
 								<!-- modal Update -->
@@ -117,4 +117,5 @@
 				</tbody>
 			</table>
 		</div>
+
 	<%- include ('partials/footer') %> 
