@@ -12,8 +12,8 @@ mongoose.connect(process.env.MONGO_DB)
 
 // List of all Items
 exports.items = async(req, res) =>{
-	
-	res.render ('index' )
+	var items = await Item.find({});
+	res.render ('index', {items})
 }
 
 //Create Item
@@ -44,4 +44,5 @@ exports.deleteItem = async(req,res)=>{
 	res.redirect('/items');
 
 }
+
 
