@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Item = require('../../models/items');
 
-mongoose.connect('mongodb://127.0.0.1:27017/ims-db')
+mongoose.connect(process.env.MONGO_DB)
 	.then(()=>{
 		console.log('Connection Open')
 	})
@@ -42,4 +42,5 @@ exports.deleteItem = async(req,res)=>{
 	console.log(`Item Deleted - ${id}`)
 	await Item.findByIdAndDelete(id);
 	res.redirect('/items');
+
 }
